@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Firebase Login</title>
+    </head>
+    <body>
+        <div id="login_div" class="main-div">
+            <h3>Firebase Web Login</h3>
+            <input type="email" placeholder="Email" id="email_field" />
+            <input type="password" placeholder="Password" id="password_field"/>
+
+            <button onclick="login()">Login</button>
+        </div>
+        <div id="user_div"> 
+          <h1>Logged in</h1>
+          <p id="user_para"></p>
+          <button onclick="logout()">Logout</button>
+        </div>
+        
+        <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
+
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+                 https://firebase.google.com/docs/web/setup#config-web-app -->
+            
+            <script>
+              // Your web app's Firebase configuration
+              var firebaseConfig = {
+                apiKey: "AIzaSyD1_sMtyXNcXwIfceHgLnhJ_ow45fVk02w",
+                authDomain: "daksha-1.firebaseapp.com",
+                databaseURL: "https://daksha-1.firebaseio.com",
+                projectId: "daksha-1",
+                storageBucket: "",
+                messagingSenderId: "265539778246",
+                appId: "1:265539778246:web:4fac6813afd0be23"
+              };
+              // Initialize Firebase
+              firebase.initializeApp(firebaseConfig);
+            </script>
+            
+         <script src="index.js"></script>   
+    </body>
+</html>
