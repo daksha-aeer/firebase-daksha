@@ -9,11 +9,21 @@
             <input type="password" placeholder="Password" id="password_field"/>
 
             <button onclick="login()">Login</button>
+            <p onclick="open_signup()">Sign up instead</p>
         </div>
+
         <div id="user_div"> 
           <h1>Logged in</h1>
-          <p id="user_para"></p>
+          <p id="user_para">here</p>
           <button onclick="logout()">Logout</button>
+        </div>
+
+        <div id="signup_div">
+            <h1>Sign up</h1>
+            <input type="email" placeholder="Email" id="email_field1" />
+            <input type="password" placeholder="Password" id="password_field1"/>
+
+            <button onclick="signup()">Sign up</button>
         </div>
         
         <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
