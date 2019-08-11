@@ -65,3 +65,9 @@ function open_signup () {
   document.getElementById("login_div").style.display = "none";        
 
 }
+
+function add() {
+  var item = document.getElementById("myInput").value;
+  document.getElementById("todo_para").innerHTML += item + "<button>Done</button><br>" ;
+  //make array for variable
+}
