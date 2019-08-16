@@ -1,4 +1,6 @@
+var email_id;
 firebase.auth().onAuthStateChanged(function(user) {
+
     if (user) {
       // User is signed in.
       
@@ -10,7 +12,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       document.getElementById("user_para").innerHTML = user.email;
 
       if (user != null) {
-        var email_id = user.email;
+        email_id = user.email;
         
         
 
@@ -65,9 +67,31 @@ function open_signup () {
   document.getElementById("login_div").style.display = "none";        
 
 }
+var db = firebase.firestore();
 
 function add() {
   var item = document.getElementById("myInput").value;
-  document.getElementById("todo_para").innerHTML += item + "<button>Done</button><br>" ;
+  //document.getElementById("todo_para").innerHTML += item + "<button>Done</button><br>" ;
   //make array for variable
+
+  db.collection(email_id).add({
+    itemfb:item
+})
+.then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+})
+.catch(function(error) {
+    console.error("Error adding document: ", error);
+});
+}
+
+function readfb() {
+  db.collection(email_id).get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+          document.getElementById("todo_para").innerHTML += doc.data().itemfb + "<button>Done</button><br>" ;
+
+    });
+});
+
 }
